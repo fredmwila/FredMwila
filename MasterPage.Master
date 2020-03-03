@@ -1,0 +1,205 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link rel="shortcut icon" type="image/png" href="images/logo2.png" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="css/StyleSheet.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, height=device-height"/>
+    <meta name="google-site-verification" content="SR6P2pPRx4Ge5k5mgpslNiat2VzGcIRWMCIVG3G_-jU" />
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Audiowide|Baloo+Bhai|Baumans|Black+Ops+One|Bowlby+One|Bowlby+One+SC|Bungee|Bungee+Inline|Cabin+Sketch|Carter+One|Contrail+One|Fredoka+One|Lilita+One|Monoton|Nova+Mono|Passion+One|Patua+One|Poller+One|Saira+Stencil+One|Skranji|Slackey&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <style type="text/css">
+        
+    </style>
+</head>
+    
+<body>
+
+    <form id="form1" runat="server">
+        <header>
+             <div id="header">
+                <a runat="server" href="/"><div class="HomeLogo"></div></a>
+                  
+                     <div class="header-nav">  
+                         <div style="text-align: justify; display: inline-block">    
+                              <div class="navigation">
+                                  <div>
+                 <asp:Button ID="About" runat="server" Text="ABOUT" Enabled="true" CssClass="navigation" OnClick="About_Click"/>
+                             <div class="dropdown-content">
+    <a href="/about">About Me</a>
+    <a href="/projects">My Projects</a>
+  </div>
+                                  </div>
+                     </div>
+                 <a runat="server" href="/videos"><asp:Button ID="Videos" runat="server" Text="VIDEOS" Enabled="true" CssClass="navigation"  OnClick="Videos_Click"/></a>
+                 <a runat="server" href="/"><asp:Button ID="HomeButton" CssClass="HomeButton" enabled="true" runat="server" OnClick="Home_Click"/></a>
+                  <a runat="server" href="/articles"><asp:Button ID="Articles" runat="server" Text="ARTICLES" Enabled="true" CssClass="navigation" OnClick="Articles_Click"/></a>
+ 
+               <%--              <asp:Button ID="GYM" runat="server" Text="GYM" Enabled="true" CssClass="navigation" Font-Size="15pt"/> 
+                         <asp:Button ID="SKATEBOARDING" runat="server" Text="SKATE" Enabled="true" CssClass="navigation" Font-Size="15pt"/>
+              --%> <%--  <asp:Button ID="Apps" runat="server" Text="Apps" Enabled="true" CssClass="navigation" Font-Size="15pt"/>--%>
+                 <a runat="server" href="/projects"><asp:Button ID="Projects" runat="server" Text="PROJECTS" Enabled="true" CssClass="navigation" OnClick="Projects_Click"/></a>
+                         </div> 
+                         </div>              
+            </div>
+           
+        </header>      
+    <div class="body">
+         <div style="z-index:1; position:relative;">
+        <asp:ContentPlaceHolder id="FeaturedContent" runat="server">       
+        </asp:ContentPlaceHolder>
+        </div>
+
+
+        <div style="z-index:2; position:relative;">
+        <div class="backgroundimg">
+            
+        <asp:ContentPlaceHolder id="MainContent" runat="server">
+        
+        </asp:ContentPlaceHolder>
+           </div>
+            </div>
+        
+        
+        <div style="z-index:1; position:relative;">
+        <div class="backgroundimg">
+        
+        <asp:ContentPlaceHolder id="MainContent2" runat="server">
+        
+        </asp:ContentPlaceHolder>
+        
+            </div>
+            </div>
+
+        <asp:ContentPlaceHolder id="MainContent3" runat="server">
+        
+        </asp:ContentPlaceHolder>
+
+        <footer>
+           
+            <div class="aboutfooter">
+                <div class="main-content">
+                    <div class="aboutleft">
+                    <a runat="server" href="/about"><h2><span style="color:white;">About</span> <span style="color:#efc109;">Me</span></h2></a>
+                    <img id="MainContent_ProfilePic" src="~/Images/profile4.JPG" runat="server" style=" border-radius: 50%; border-color:#EFE9E9;border-width:1px;border-style:Solid;height:100px;"/>
+                    <p>Welcome to the personal website of .Net developer, skateboarder, and rugby player Fred Mwila.</p>
+                        </div>
+                    <div class="aboutmid">
+    <asp:Panel ID="Panel1" runat="server" DefaultButton="btnSubmit" style="">
+        <h1><span style="color:white;">Contact</span> <span style="color:#efc109;">Me</span></h1>
+    <p>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ErrorMessage="*"
+            ControlToValidate="YourName" ValidationGroup="save" /><br />
+        <asp:TextBox ID="YourName" placeholder="Name" runat="server" Width="250px" /><br />
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*"
+            ControlToValidate="YourEmail" ValidationGroup="save" /><br />
+        <asp:TextBox ID="YourEmail" runat="server" placeholder="Email" Width="250px" />
+        <asp:RegularExpressionValidator runat="server" ID="RegularExpressionValidator23"
+            SetFocusOnError="true" Text="Example: username@gmail.com" ControlToValidate="YourEmail"
+            ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" Display="Dynamic"
+            ValidationGroup="save" /><br />
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*"
+            ControlToValidate="YourSubject" ValidationGroup="save" /><br />
+        <asp:TextBox ID="YourSubject" placeholder="Subject" runat="server" Width="400px" /><br />
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="*"
+            ControlToValidate="Comments" ValidationGroup="save" /><br />
+        <asp:TextBox ID="Comments" Placeholder="Message" runat="server" 
+                TextMode="MultiLine" Rows="10" Width="400px" />
+    </p>
+    <p>
+        <asp:Button ID="btnSubmit" CssClass="btnSubmit" runat="server"  
+                    OnClick="Send_Click" Text="Send Message" ValidationGroup="save" />
+
+    </p>
+        <p>
+    <asp:Label ID="DisplayMessage" runat="server" />
+</p>  
+</asp:Panel>
+</div>
+                    <div class="aboutright">
+
+                    <h2><span style="color:white;">Social<span style="color:white;"> <span style="color:#efc109;">Media</span></h2>
+                    <a href="https://www.facebook.com/fred.mwila.jr" target="_blank">
+                                       <div class="fb">
+                                           </div>
+                                    </a>
+                                      <br />
+                                      <a href="https://www.linkedin.com/in/fred-mwila-60790aaa/" target="_blank">
+                                       <div class="linkedin">
+                                           </div>
+                                    </a>
+                                      <br />
+                                      <a href="https://www.youtube.com/fredmwilajr" target="_blank">
+                                       <div class="yt">
+                                           </div>
+                                    </a>
+        </div>
+                    </div>
+             <%--    <div style="max-width:960px; margin: 0 auto;">            
+                     <table>
+                          <tbody>
+                              <tr>
+                                  <td colspan="2">
+                                      <a runat="server" href="/about"><h2><span style="color:white;">About</span> <span style="color:#efc109;">Me</span></h2></a>
+                                  </td>
+                                 
+                                  <td>
+                                      <h2><span style="color:white;">Social<span style="color:white;"> <span style="color:#efc109;">Media</span></h2>
+                                  </td>
+                                   <td>
+                                     <a href="/projects"> <h2><span style="color:white;">My</span> <span style="color:#efc109;">Projects</span></h2></a>
+                                  </td>
+                              </tr>
+                              <tr>
+                              <td>
+                                <img id="MainContent_ProfilePic" src="~/Images/profile4.JPG" runat="server" style=" border-radius: 50%; border-color:#EFE9E9;border-width:1px;border-style:Solid;height:100px;">
+                              </td>
+                              <td valign="top">                                  
+                                Welcome to the personal website of .Net developer, skateboarder, and rugby player Fred Mwila                              
+                              </td>
+                                  <td  valign="top" align="center">
+                                       
+                                    <a href="https://www.facebook.com/fred.mwila.jr" target="_blank">
+                                       <div class="fb">
+                                           </div>
+                                    </a>
+                                      <br />
+                                      <a href="https://www.linkedin.com/in/fred-mwila-60790aaa/" target="_blank">
+                                       <div class="linkedin">
+                                           </div>
+                                    </a>
+                                      <br />
+                                      <a href="https://www.youtube.com/fredmwilajr" target="_blank">
+                                       <div class="yt">
+                                           </div>
+                                    </a>
+                                           
+                                  </td>
+                                  <td>
+
+                                  </td>
+                                 <td>
+
+                                 </td>
+                          </tr>
+                      </tbody></table>
+                </div>--%>
+                </div>
+            <div class="footer" height="20px">
+                 <div style="max-width:960px; margin: 0 auto;">
+            <b>© <%: DateTime.Now.Year %> - Fred Mwila Jr</b>
+                </div>
+                </div>
+        </footer>
+    </form>
+
+</body>
+    
+</html>
