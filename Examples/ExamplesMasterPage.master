@@ -1,0 +1,14 @@
+﻿<%@ Master Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="ExamplesMasterPage.master.vb" Inherits="Examples_ExamplesMasterPage" %>
+
+
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
+
+    <asp:ContentPlaceHolder ID="ExampleContent" runat="server" >
+
+
+</asp:ContentPlaceHolder>
+
+
+</asp:Content>
+
+
