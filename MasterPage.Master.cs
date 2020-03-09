@@ -91,8 +91,8 @@ partial class MasterPage : System.Web.UI.MasterPage
         sc.Port = 587;
 
 
-        mm.From = new MailAddress("FredMwilaJr@gmail.com", "Fred Mwila");
-        mm.To.Add(new MailAddress("FredMwilaJr@gmail.com"));
+        mm.From = new MailAddress("PRIVATE", "PRIVATE");
+        mm.To.Add(new MailAddress("PRIVATE"));
         mm.Subject = YourSubject.Text;
 
         string body = "From: " + YourName.Text + "<br/><br/>";
@@ -106,7 +106,7 @@ partial class MasterPage : System.Web.UI.MasterPage
         mm.Body = body;
         sc.UseDefaultCredentials = false;
         sc.EnableSsl = true;
-        sc.Credentials = new System.Net.NetworkCredential("FredMwilaJr@gmail.com", "@12Greercres");
+        'sc.Credentials = PRIVATE
         sc.Send(mm);
 
         mm.Dispose();
